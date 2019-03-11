@@ -52,14 +52,15 @@ html {
     /*font-family: "Inter UI", "Helvetica Neue", Helvetica, arial, sans-serif; */
     font-family: "Droid Serif", Georgia, serif;
     color: #5C6366;
-    padding: 48px 24px 24px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
 }
 
-body {
-    max-width: 42em;
-    margin: 0 auto;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 /*
@@ -203,6 +204,16 @@ a:focus {
     margin-bottom: 24px;
 }
 
+@media (min-width: 992px) {
+    .c-author {
+        display: block;
+    }
+
+    .c-author__avatar {
+        margin-bottom: 16px;
+    }
+}
+
 .c-author__avatar {
     width: 56px;
     height: 56px;
@@ -226,6 +237,66 @@ a:focus {
     font-style: 16px;
     line-height: 16px;
 }
+
+/*
+    Components: Article
+*/
+.c-article__header,
+.c-article__body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.c-article__header {
+    padding: 24px 24px 0;
+}
+
+.c-article__body {
+    padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+    .c-article__header {
+        padding: 48px 48px 24px;
+    }
+
+    .c-article__author {
+        padding-bottom: 24px;
+    }
+
+    .c-article__body {
+        padding: 24px 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-article__body {
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .c-article__author {
+        width: 25%;
+        padding-right: 24px;
+    }
+
+    .c-article__content {
+        width: 75%;
+    }
+}
+
+/*
+
+    Utilities : max-width
+    ---
+    Utility classes to put specific max widths onto elements.
+*/
+.u-max-width-sm {
+    max-width: 36em;
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -233,10 +304,6 @@ a:focus {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    html {
-        padding: 48px 48px 24px;
-    }
-
     h1 {
         font-size: 58px;
         line-height: 64px;
