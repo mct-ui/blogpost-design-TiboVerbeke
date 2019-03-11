@@ -3,12 +3,11 @@
     ---
     Default markup for page level elements
 */
-
 html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
-    color: #111;
+    color: #5C6366;
     padding: 48px 24px 24px;
 }
 
@@ -23,9 +22,8 @@ body {
  *
  * Customize the background color to match your design.
  */
-
 ::selection {
-    background: #e85e00;
+    background: #00E6A1;
     color: white;
     text-shadow: none;
 }
@@ -35,7 +33,6 @@ body {
     ---
     Default markup for images to make them responsive
 */
-
 img {
     max-width: 100%;
     vertical-align: top;
@@ -46,11 +43,14 @@ img {
     ---
     Default markup for typographic elements
 */
+h1,
+h2,
+h3 {
+    color: #17181A
+}
 
 h1 {
-    font-family: "Times New Roman", serif;
     font-size: 36px;
-    font-weight: normal;
     line-height: 40px;
     margin: 0 0 24px;
 }
@@ -123,30 +123,29 @@ hr {
 }
 
 a {
-    color: RoyalBlue;
+    color: #00A1E6;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: BlueViolet;
+    color: #00E1A6;
 }
 
 a:hover,
 a:focus {
-    color: Crimson;
+    color: #00B37D;
 }
 
 /* Small devices (landscape phones, 576px and up) */
-
 @media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) */
-
 @media (min-width: 768px) {
     html {
         padding: 48px 48px 24px;
     }
+
     h1 {
         font-size: 58px;
         line-height: 64px;
@@ -154,11 +153,9 @@ a:focus {
 }
 
 /* Large devices (landscape tablets, desktops, 992px and up) */
-
 @media (min-width: 992px) {}
 
 /* Extra large devices (large desktops, 1200px and up) */
-
 @media (min-width: 1200px) {}
 
 /*
@@ -167,8 +164,8 @@ a:focus {
     Inlined to avoid the additional HTTP request:
     http://www.phpied.com/delay-loading-your-print-css/
 */
-
 @media print {
+
     *,
     *:before,
     *:after {
@@ -179,16 +176,20 @@ a:focus {
         box-shadow: none !important;
         text-shadow: none !important;
     }
+
     a,
     a:visited {
         text-decoration: underline;
     }
+
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: " ("attr(href) ")";
     }
+
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: " ("attr(title) ")";
     }
+
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
@@ -197,14 +198,17 @@ a:focus {
     a[href^="javascript:"]:after {
         content: "";
     }
+
     pre {
         white-space: pre-wrap !important;
     }
+
     pre,
     blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
+
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
@@ -212,16 +216,19 @@ a:focus {
     thead {
         display: table-header-group;
     }
+
     tr,
     img {
         page-break-inside: avoid;
     }
+
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
+
     h2,
     h3 {
         page-break-after: avoid;
